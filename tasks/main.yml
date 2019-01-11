@@ -1,0 +1,28 @@
+---
+# tasks file for vagrant
+- name: test veriables and environment
+  assert:
+    that:
+      - vagrant_package_state is defined
+      - vagrant_package_state == "present" or
+        vagrant_package_state == "latest" or
+        vagrant_package_state == "absent"
+      - vagrant_ignore_docker is defined
+      - vagrant_ignore_docker or
+        not vagrant_ignore_docker
+
+- name: install vagrant
+  package:
+    name: "{{ vagrant_packages }}"
+    state: "{{ vagrant_package_state }}"
+  register: vagrant_install_vagrant
+  until: vagrant_install_vagrant is succeeded
+  retries: 3
+
+- name: install pip requirements
+  pip:
+    name: "{{ vagrant_pip_packages }}"
+    state: "{{ vagrant_package_state }}"
+  register: vagrant_install_pip_requirements
+  until: vagrant_install_pip_requirements is succeeded
+  retries: 3

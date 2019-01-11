@@ -1,0 +1,11 @@
+---
+# vars file for vagrant
+_vagrant_packages:
+  default:
+    - vagrant
+    - vagrant-libvirt
+
+vagrant_packages: "{{ _vagrant_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_vagrant_packages[ansible_distribution] | default(_vagrant_packages['default'])) }}"
+
+vagrant_pip_packages:
+  - python-vagrant
