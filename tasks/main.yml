@@ -12,7 +12,12 @@
         not vagrant_ignore_docker
       - vagrant_version is defined
 
-- name: install vagrant
+- name: download vagrant
+  get_url:
+    url: "{{ vagrant_package }}"
+    dest: /tmp
+
+- name: install vagrant package
   package:
     name: "/tmp/{{ vagrant_package | basename }}"
     state: "{{ vagrant_package_state }}"
@@ -24,16 +29,7 @@
       ansible_pkg_mgr == "yum" or
       ansible_pkg_mgr == "dnf"
 
-- name: download vagrant source
-  get_url:
-    url: "{{ vagrant_package }}"
-    dest: /tmp
-  when:
-    - ansible_pkg_mgr != "apt"
-    - ansible_pkg_mgr != "yum"
-    - ansible_pkg_mgr != "dnf"
-
-- name: unpack vagrant source
+- name: install vagrant archive
   unarchive:
     dest: "{{ vagrant_unarchive_dest }}"
     creates: "{{ vagrant_unarchive_dest }}/vagrant"
