@@ -31,6 +31,7 @@
 
 - name: install vagrant archive
   unarchive:
+    src: "{{ vagrant_package | basename }}"
     dest: "{{ vagrant_unarchive_dest }}"
     creates: "{{ vagrant_unarchive_dest }}/vagrant"
     remote_src: yes
