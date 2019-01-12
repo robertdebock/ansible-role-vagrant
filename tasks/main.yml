@@ -16,13 +16,16 @@
   get_url:
     url: "{{ vagrant_package }}"
     dest: /tmp
+  register: vagrant_download_vagrant
+  until: vagrant_download_vagrant is succeeded
+  retries: 3
 
 - name: install vagrant rpm
   package:
     name: "/tmp/{{ vagrant_package | basename }}"
     state: "{{ vagrant_package_state }}"
   register: vagrant_install_vagrant_rpm
-  until: vagrant_install_vagrant is succeeded_rpm
+  until: vagrant_install_vagrant_rpm is succeeded
   retries: 3
   when:
     - ansible_pkg_mgr == "yum" or
@@ -33,7 +36,7 @@
     name: "/tmp/{{ vagrant_package | basename }}"
     state: "{{ vagrant_package_state }}"
   register: vagrant_install_vagrant_deb
-  until: vagrant_install_vagrant is succeeded_deb
+  until: vagrant_install_vagrant_deb is succeeded
   retries: 3
   when:
     - ansible_pkg_mgr == "apt"
