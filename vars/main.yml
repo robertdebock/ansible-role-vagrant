@@ -3,21 +3,14 @@
 _vagrant_packages:
   default:
     - vagrant
-  Alpine:
-    - vagrant
   Archlinux:
     - vagrant
-  CentOS:
-    - vagrant
-    - vagrant-libvirt
   Debian:
     - vagrant
     - vagrant-libvirt
   Fedora:
     - vagrant
     - vagrant-libvirt
-  openSUSE Leap:
-    - vagrant
   openSUSE Tumbleweed:
     - vagrant
   Ubuntu:
