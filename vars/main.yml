@@ -1,23 +1,15 @@
 ---
 # vars file for vagrant
-_vagrant_packages:
-  default:
-    - vagrant
-  Archlinux:
-    - vagrant
-  Debian:
-    - vagrant
-    - vagrant-libvirt
-  Fedora:
-    - vagrant
-    - vagrant-libvirt
-  openSUSE Tumbleweed:
-    - vagrant
-  Ubuntu:
-    - vagrant
-    - vagrant-libvirt
 
-vagrant_packages: "{{ _vagrant_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_vagrant_packages[ansible_distribution] | default(_vagrant_packages['default'])) }}"
+vagrant_release_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}"
+
+_vagrant_packages:
+  apt: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb"
+  dnf: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
+  yum: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
+  src: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.tar.xz"
+
+vagrant_packages: "{{ _vagrant_packages[ansible_pkg_mgr] | default(_vagrant_packages['src']) }}"
 
 vagrant_pip_packages:
   - python-vagrant

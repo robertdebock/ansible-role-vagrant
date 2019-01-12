@@ -10,6 +10,7 @@
       - vagrant_ignore_docker is defined
       - vagrant_ignore_docker or
         not vagrant_ignore_docker
+      - vagrant_version is defined
 
 - name: install vagrant
   package:
@@ -18,6 +19,20 @@
   register: vagrant_install_vagrant
   until: vagrant_install_vagrant is succeeded
   retries: 3
+  when:
+    - ansible_pkg_mgr == "apt" or
+      ansible_pkg_mgr == "yum" or
+      ansible_pkg_mgr == "dnf"
+
+- name: unpack vagrant
+  unarchive:
+    dest: "{{ vagrant_unarchive_dest }}"
+    creates: "{{ vagrant_unarchive_dest }}/vagrant"
+    remote_src: yes
+  when:
+    - ansible_pkg_mgr != "apt"
+    - ansible_pkg_mgr != "yum"
+    - ansible_pkg_mgr != "dnf"
 
 - name: install pip requirements
   pip:
