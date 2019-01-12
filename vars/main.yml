@@ -3,6 +3,8 @@
 _vagrant_packages:
   default:
     - vagrant
+  Fedora:
+    - vagrant
     - vagrant-libvirt
 
 vagrant_packages: "{{ _vagrant_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_vagrant_packages[ansible_distribution] | default(_vagrant_packages['default'])) }}"
