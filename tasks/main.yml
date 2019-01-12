@@ -12,9 +12,14 @@
         not vagrant_ignore_docker
       - vagrant_version is defined
 
+- name: download vagrant
+  get_url:
+    url: "{{ vagrant_package }}"
+    dest: /tmp
+
 - name: install vagrant
   package:
-    name: "{{ vagrant_packages }}"
+    name: "/tmp/{{ vagrant_package | basename }}"
     state: "{{ vagrant_package_state }}"
   register: vagrant_install_vagrant
   until: vagrant_install_vagrant is succeeded
