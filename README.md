@@ -82,17 +82,17 @@ This role has been tested against the following distributions and Ansible versio
 
 |distribution|ansible 2.6|ansible 2.7|ansible devel|
 |------------|-----------|-----------|-------------|
-|alpine-edge*|no|no|no*|
-|alpine-latest|no|no|no*|
+|alpine-edge*|yes|yes|yes*|
+|alpine-latest|yes|yes|yes*|
 |archlinux|yes|yes|yes*|
 |centos-6|no|no|no*|
-|centos-latest|no|no|no*|
+|centos-latest|yes|yes|yes*|
 |debian-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
 |fedora-latest|yes|yes|yes*|
 |fedora-rawhide*|yes|yes|yes*|
-|opensuse-leap|no|no|no*|
+|opensuse-leap|yes|yes|yes*|
 |opensuse-tumbleweed|yes|yes|yes*|
 |ubuntu-artful|yes|yes|yes*|
 |ubuntu-devel*|yes|yes|yes*|
