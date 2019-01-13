@@ -33,7 +33,7 @@
 
 - name: install vagrant deb
   apt:
-    name: "/tmp/{{ vagrant_package | basename }}"
+    deb: "/tmp/{{ vagrant_package | basename }}"
     state: "{{ vagrant_package_state }}"
   register: vagrant_install_vagrant_deb
   until: vagrant_install_vagrant_deb is succeeded
