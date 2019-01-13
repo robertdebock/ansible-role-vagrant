@@ -7,6 +7,7 @@ _vagrant_package:
   apt: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb"
   dnf: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
   yum: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
+  zypper: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
   # src: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.tar.xz"
   src: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_linux_amd64.zip"
 
