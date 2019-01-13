@@ -40,7 +40,7 @@
   until: vagrant_install_vagrant_rpm_using_zypper is succeeded
   retries: 3
   when:
-   - ansible_pkg_mgr == "zypper"
+    - ansible_pkg_mgr == "zypper"
 
 - name: install vagrant deb
   apt:
