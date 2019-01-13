@@ -20,17 +20,27 @@
   until: vagrant_download_vagrant is succeeded
   retries: 3
 
-- name: install vagrant rpm
+- name: install vagrant rpm using package
   package:
     name: "/tmp/{{ vagrant_package | basename }}"
     state: "{{ vagrant_package_state }}"
-  register: vagrant_install_vagrant_rpm
-  until: vagrant_install_vagrant_rpm is succeeded
+  register: vagrant_install_vagrant_rpm_using_package
+  until: vagrant_install_vagrant_rpm_using_package is succeeded
   retries: 3
   when:
     - ansible_pkg_mgr == "yum" or
-      ansible_pkg_mgr == "dnf" or
-      ansible_pkg_mgr == "zypper"
+      ansible_pkg_mgr == "dnf"
+
+- name: install vagrant rpm using zypper
+  zypper:
+    name: "/tmp/{{ vagrant_package | basename }}"
+    state: "{{ vagrant_package_state }}"
+    disable_gpg_check: yes
+  register: vagrant_install_vagrant_rpm_using_zypper
+  until: vagrant_install_vagrant_rpm_using_zypper is succeeded
+  retries: 3
+  when:
+   - ansible_pkg_mgr == "zypper"
 
 - name: install vagrant deb
   apt:
