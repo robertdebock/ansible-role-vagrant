@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: vagrant-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: vagrant-ubuntu-artful
-    image: ubuntu:artful
+  - name: vagrant-ubuntu-latest
+    image: ubuntu:latest
+  - name: vagrant-ubuntu-rolling
+    image: ubuntu:rolling
   - name: vagrant-ubuntu-devel
     image: ubuntu:devel
 provisioner:
