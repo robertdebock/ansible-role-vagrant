@@ -3,13 +3,6 @@
 - name: test veriables and environment
   assert:
     that:
-      - vagrant_package_state is defined
-      - vagrant_package_state == "present" or
-        vagrant_package_state == "latest" or
-        vagrant_package_state == "absent"
-      - vagrant_ignore_docker is defined
-      - vagrant_ignore_docker or
-        not vagrant_ignore_docker
       - vagrant_version is defined
 
 - name: download vagrant
@@ -23,7 +16,7 @@
 - name: install vagrant rpm using package
   package:
     name: "/tmp/{{ vagrant_package | basename }}"
-    state: "{{ vagrant_package_state }}"
+    state: present
   register: vagrant_install_vagrant_rpm_using_package
   until: vagrant_install_vagrant_rpm_using_package is succeeded
   retries: 3
@@ -34,7 +27,7 @@
 - name: install vagrant rpm using zypper
   zypper:
     name: "/tmp/{{ vagrant_package | basename }}"
-    state: "{{ vagrant_package_state }}"
+    state: present
     disable_gpg_check: yes
   register: vagrant_install_vagrant_rpm_using_zypper
   until: vagrant_install_vagrant_rpm_using_zypper is succeeded
@@ -45,7 +38,7 @@
 - name: install vagrant deb
   apt:
     deb: "/tmp/{{ vagrant_package | basename }}"
-    state: "{{ vagrant_package_state }}"
+    state: present
   register: vagrant_install_vagrant_deb
   until: vagrant_install_vagrant_deb is succeeded
   retries: 3
@@ -67,7 +60,7 @@
 - name: install pip requirements
   pip:
     name: "{{ vagrant_pip_packages }}"
-    state: "{{ vagrant_package_state }}"
+    state: present
   register: vagrant_install_pip_requirements
   until: vagrant_install_pip_requirements is succeeded
   retries: 3

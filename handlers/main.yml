@@ -5,4 +5,4 @@
     name: "{{ vagrant_service }}"
     state: restarted
   when:
-    - ansible_virtualization_type != "docker" or vagrant_ignore_docker
+    - ansible_virtualization_type != "docker"
