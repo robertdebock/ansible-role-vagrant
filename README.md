@@ -77,7 +77,6 @@ This role uses the following modules:
 ```yaml
 ---
 - apt
-- assert
 - get_url
 - package
 - pip
