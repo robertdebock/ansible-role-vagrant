@@ -116,7 +116,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | alpine | Dependency not available: python_pip |
 
 
-
 Testing
 -------
 
