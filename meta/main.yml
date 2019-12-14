@@ -36,6 +36,5 @@ galaxy_info:
     - vagrant
     - archlinux
     - centos
-    - rhel
 
 dependencies: []
