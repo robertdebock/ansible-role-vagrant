@@ -10,7 +10,7 @@ on:
     tags_ignore:
       - '*'
   schedule:
-    - cron: '35 4 22 * *'
+    - cron: '19 3 22 * *'
 
 jobs:
   lint:
