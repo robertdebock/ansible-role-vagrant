@@ -2,9 +2,9 @@
 
 Install vagrant on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-vagrant.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-vagrant)|[![github](https://github.com/robertdebock/ansible-role-vagrant/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-vagrant/actions)|[![quality](https://img.shields.io/ansible/quality/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![downloads](https://img.shields.io/ansible/role/d/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-vagrant.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-vagrant)|[![github](https://github.com/robertdebock/ansible-role-vagrant/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-vagrant/actions)|[![quality](https://img.shields.io/ansible/quality/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![downloads](https://img.shields.io/ansible/role/d/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-vagrant.svg)](https://github.com/robertdebock/ansible-role-vagrant/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -75,8 +75,8 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
-- robertdebock.core_dependencies
 - robertdebock.buildtools
+- robertdebock.core_dependencies
 - robertdebock.epel
 - robertdebock.python_pip
 
