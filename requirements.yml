@@ -1,6 +1,6 @@
 ---
 - robertdebock.bootstrap
-- robertdebock.core_dependencies
 - robertdebock.buildtools
+- robertdebock.core_dependencies
 - robertdebock.epel
 - robertdebock.python_pip
