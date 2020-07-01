@@ -1,5 +1,8 @@
 ---
 # tasks file for vagrant
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: download vagrant
   get_url:
     url: "{{ vagrant_package }}"
