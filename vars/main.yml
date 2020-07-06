@@ -1,5 +1,6 @@
 ---
 # vars file for vagrant
+
 vagrant_release_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}"
 
 _vagrant_package:
