@@ -37,6 +37,7 @@
     dest: "{{ vagrant_unarchive_dest }}"
     creates: "{{ vagrant_unarchive_dest }}/vagrant"
     remote_src: yes
+    mode: "0755"
   when:
     - ansible_pkg_mgr != "apt"
     - ansible_pkg_mgr != "yum"
