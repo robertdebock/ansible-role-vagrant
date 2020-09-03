@@ -12,6 +12,7 @@
   package:
     name: "/tmp/{{ vagrant_package | basename }}"
     state: present
+    disable_gpg_check: yes
   when:
     - ansible_pkg_mgr == "yum" or
       ansible_pkg_mgr == "dnf"

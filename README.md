@@ -42,11 +42,11 @@ For verification `molecule/resources/verify.yml` run after the role has been app
 - name: Verify
   hosts: all
   become: yes
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
-    - name: check if connection still works
-      ping:
+    - name: try vagrant
+      command: vagrant --version
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
