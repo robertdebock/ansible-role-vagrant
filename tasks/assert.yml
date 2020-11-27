@@ -4,10 +4,12 @@
   assert:
     that:
       - vagrant_version is defined
+      - vagrant_version is string
     quiet: yes
 
 - name: test if vagrant_unarchive_dest is set correctly
   assert:
     that:
       - vagrant_unarchive_dest is defined
+      - vagrant_unarchive_dest is string
     quiet: yes
