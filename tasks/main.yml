@@ -16,8 +16,7 @@
     state: present
     disable_gpg_check: yes
   when:
-    - ansible_pkg_mgr == "yum" or
-      ansible_pkg_mgr == "dnf"
+    - ansible_pkg_mgr in [ "yum", "dnf" ]
 
 - name: install vagrant rpm using zypper
   zypper:
@@ -42,10 +41,7 @@
     remote_src: yes
     mode: "0755"
   when:
-    - ansible_pkg_mgr != "apt"
-    - ansible_pkg_mgr != "yum"
-    - ansible_pkg_mgr != "dnf"
-    - ansible_pkg_mgr != "zypper"
+    - ansible_pkg_mgr not in [ "apt", "dnf", "yum", "zypper" ]
 
 - name: install pip requirements
   pip:
