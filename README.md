@@ -2,9 +2,9 @@
 
 Install vagrant on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-vagrant.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-vagrant)|[![github](https://github.com/robertdebock/ansible-role-vagrant/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-vagrant/actions)|[![quality](https://img.shields.io/ansible/quality/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![downloads](https://img.shields.io/ansible/role/d/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-vagrant.svg)](https://github.com/robertdebock/ansible-role-vagrant/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-vagrant.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-vagrant)|[![github](https://github.com/robertdebock/ansible-role-vagrant/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-vagrant/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-vagrant/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-vagrant)|[![quality](https://img.shields.io/ansible/quality/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![downloads](https://img.shields.io/ansible/role/d/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-vagrant.svg)](https://github.com/robertdebock/ansible-role-vagrant/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -54,10 +54,11 @@ vagrant_unarchive_dest: /usr/local/bin
 
 ## [Requirements](#requirements)
 
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the current, previous and next release of Ansible.)
+- pip packages listed in [requirements.txt](https://github.com/robertdebock/ansible-role-vagrant/blob/master/requirements.txt).
 
 ## [Status of requirements](#status-of-requirements)
+
+The following roles are used to prepare a system. You may choose to prepare your system in another way, I have tested these roles as well.
 
 | Requirement | Travis | GitHub |
 |-------------|--------|--------|
