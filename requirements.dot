@@ -1,0 +1,17 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "vagrant" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.buildtools" [fillcolor=green style=filled]
+    "robertdebock.core_dependencies" [fillcolor=green style=filled]
+    "robertdebock.epel" [fillcolor=green style=filled]
+    "robertdebock.python_pip" [fillcolor=green style=filled]
+  }
+  "vagrant" -> "robertdebock.bootstrap"
+  "vagrant" -> "robertdebock.buildtools"
+  "vagrant" -> "robertdebock.core_dependencies"
+  "vagrant" -> "robertdebock.epel"
+  "vagrant" -> "robertdebock.python_pip"
+}
