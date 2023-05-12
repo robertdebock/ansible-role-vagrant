@@ -5,6 +5,6 @@
   gather_facts: no
 
   tasks:
-    - name: try vagrant
+    - name: Try vagrant
       ansible.builtin.command:
         cmd: vagrant --version
