@@ -5,6 +5,7 @@
     that:
       - vagrant_version is defined
       - vagrant_version is string
+      - vagrant_version is not none
     quiet: yes
 
 - name: assert | Test if vagrant_unarchive_dest is set correctly
@@ -12,4 +13,5 @@
     that:
       - vagrant_unarchive_dest is defined
       - vagrant_unarchive_dest is string
+      - vagrant_unarchive_dest is not none
     quiet: yes
