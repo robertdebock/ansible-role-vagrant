@@ -2,9 +2,9 @@
 
 Install vagrant on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-vagrant/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-vagrant/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-vagrant/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-vagrant)|[![quality](https://img.shields.io/ansible/quality/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![downloads](https://img.shields.io/ansible/role/d/36246)](https://galaxy.ansible.com/robertdebock/vagrant)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-vagrant.svg)](https://github.com/robertdebock/ansible-role-vagrant/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-vagrant/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-vagrant/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-vagrant/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-vagrant)|[![downloads](https://img.shields.io/ansible/role/d/24622)](https://galaxy.ansible.com/robertdebock/vagrant)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-vagrant.svg)](https://github.com/robertdebock/ansible-role-vagrant/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -96,7 +96,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-vagrant/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-vagrant/issues).
 
 ## [License](#license)
 
