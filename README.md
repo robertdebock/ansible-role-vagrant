@@ -1,4 +1,4 @@
-# Ansible role [vagrant](#vagrant)
+# [Ansible role vagrant](#vagrant)
 
 Install vagrant on your system.
 
