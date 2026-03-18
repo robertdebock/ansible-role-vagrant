@@ -19,7 +19,7 @@
     state: present
     disable_gpg_check: true
   when:
-    - ansible_pkg_mgr in [ "yum", "dnf", "dnf5" ]
+    - ansible_facts['pkg_mgr'] in [ "yum", "dnf", "dnf5" ]
 
 - name: Install vagrant rpm using zypper
   community.general.zypper:
@@ -27,14 +27,14 @@
     state: present
     disable_gpg_check: true
   when:
-    - ansible_pkg_mgr == "zypper"
+    - ansible_facts['pkg_mgr'] == "zypper"
 
 - name: Install vagrant deb
   ansible.builtin.apt:
     deb: "/tmp/{{ vagrant_package | basename }}"
     state: present
   when:
-    - ansible_pkg_mgr == "apt"
+    - ansible_facts['pkg_mgr'] == "apt"
 
 - name: Install vagrant archive
   ansible.builtin.unarchive:
@@ -44,7 +44,7 @@
     remote_src: true
     mode: "0755"
   when:
-    - ansible_pkg_mgr not in [ "apt", "dnf", "yum", "zypper", "dnf5" ]
+    - ansible_facts['pkg_mgr'] not in [ "apt", "dnf", "yum", "zypper", "dnf5" ]
 
 - name: Install pip requirements
   ansible.builtin.pip:

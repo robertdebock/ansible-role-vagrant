@@ -4,16 +4,16 @@
 vagrant_release_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}"
 
 _vagrant_package:
-  apt: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb"
-  dnf: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
-  yum: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
-  zypper: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.rpm"
+  apt: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.deb"
+  dnf: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
+  yum: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
+  zypper: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
   src: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_linux_amd64.zip"
 
-vagrant_package: "{{ _vagrant_package[ansible_pkg_mgr] | default(_vagrant_package['src']) }}"
+vagrant_package: "{{ _vagrant_package[ansible_facts['pkg_mgr']] | default(_vagrant_package['src']) }}"
 
 _vagrant_pip_packages:
   default:
     - python-vagrant
   Debian: []
-vagrant_pip_packages: "{{ _vagrant_pip_packages[ansible_os_family] | default(_vagrant_pip_packages['default']) }}"
+vagrant_pip_packages: "{{ _vagrant_pip_packages[ansible_facts['os_family']] | default(_vagrant_pip_packages['default']) }}"
