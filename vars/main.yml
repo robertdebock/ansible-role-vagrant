@@ -6,6 +6,7 @@ vagrant_release_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version 
 _vagrant_package:
   apt: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.deb"
   dnf: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
+  dnf5: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
   yum: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
   zypper: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
   src: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_linux_amd64.zip"
