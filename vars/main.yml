@@ -3,12 +3,13 @@
 
 vagrant_release_url: "https://releases.hashicorp.com/vagrant/{{ vagrant_version }}"
 
+# HashiCorp names the packages vagrant_<version>-1_amd64.deb and vagrant-<version>-1.x86_64.rpm (only for amd64 and x86_64).
 _vagrant_package:
-  apt: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.deb"
-  dnf: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
-  dnf5: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
-  yum: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
-  zypper: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_{{ ansible_facts['architecture'] }}.rpm"
+  apt: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}-1_amd64.deb"
+  dnf: "{{ vagrant_release_url }}/vagrant-{{ vagrant_version }}-1.x86_64.rpm"
+  dnf5: "{{ vagrant_release_url }}/vagrant-{{ vagrant_version }}-1.x86_64.rpm"
+  yum: "{{ vagrant_release_url }}/vagrant-{{ vagrant_version }}-1.x86_64.rpm"
+  zypper: "{{ vagrant_release_url }}/vagrant-{{ vagrant_version }}-1.x86_64.rpm"
   src: "{{ vagrant_release_url }}/vagrant_{{ vagrant_version }}_linux_amd64.zip"
 
 vagrant_package: "{{ _vagrant_package[ansible_facts['pkg_mgr']] | default(_vagrant_package['src']) }}"
