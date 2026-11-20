@@ -49,7 +49,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 # defaults file for vagrant
 
 # The version of vagrant to install. See https://releases.hashicorp.com/vagrant/ .
-vagrant_version: "2.2.19"
+vagrant_version: "2.4.9"
 
 # The location to unpack the .tar.xz, if applicable.
 vagrant_unarchive_dest: /usr/local/bin
@@ -89,11 +89,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
 |[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
 
-The minimum version of Ansible required is 2.12, tests have been done on:
-
-- The previous version.
-- The current version.
-- The development version.
+The minimum version of Ansible (ansible-core) required is 2.20, tests are done with the latest release of ansible-core.
 
 If you find issues, please register them on [GitHub](https://github.com/robertdebock/ansible-role-vagrant/issues).
 
